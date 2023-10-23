@@ -2,78 +2,49 @@
 <html>
 <head>
   <title>QuickSense - Pocket Dictionary</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Add a link to your custom CSS file for styling -->
+  
   <script src="popup.js"></script>
   <script src="jquery-3.7.1.min.js"></script>
-</head>
-<body>
-  <header>
-    <h1>QuickSense</h1>
-    <p>Your Pocket Dictionary</p>
-  </header>
-  <main>
-    <div class="search-container">
-      <input type="text" id="wordInput" placeholder="Enter a word">
-      <br><br><br>
-      <button id="findMeaningButton">Find Meaning</button>
-    </div>
-    <div id="meaning" class="result-container"></div>
-
-	<!-- Add the Pronounce button with a Font Awesome speaker icon -->
-	<br>
-	<div class="pronounce-container">
-		<button id="pronounceButton">
-			<i class="fas fa-volume-up"></i> Pronounce
-		</button>
-		<div id="languageDropdown" class="language-dropdown" style="display: none;">
-			<select id="languageSelect">
-				<option value="en-US">English (US)</option>
-				<option value="ta-IN">Tamil</option>
-				<option value="fr-FR">French</option>
-				<option value="hi-IN">Hindi</option>
-				<option value="en-UK">English (UK)</option>
-			</select>
-		</div>
-	</div>
-  </main>
-  <footer>
-    <p>&copy; 2023 QuickSense. All rights reserved.</p>
-  </footer>
-</body>
-</html>
-
 <style>
 /* styles.css */
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+html{
 
+  background: #014D4E; !important
+    border:none;
+}
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
+  font-family: 'Raleway', sans-serif;
+  background: none; !important
+}
+.fullcontent{
+  width:400px;
+  border: 3px solid #66cdaa ;
+  background-color: #fff;
+  border-radius: 10px;
+  margin:none;
 }
 
 header {
-  text-align: center;
-  background-color: #0077b6;
-  color: #fff;
-  padding: 20px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  text-align: left;
+  font-size:30px;
+  background: none;
+  color: #66cdaa;
 }
 
 header h1 {
-  font-size: 2.5rem;
   margin: 0;
 }
 
 header p {
+  margin-top : 5%;
   font-size: 1.2rem;
+  margin-left: 14%;
 }
 
 main {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 2px;
 }
 
 .search-container {
@@ -81,105 +52,202 @@ main {
   margin-bottom: 20px;
 }
 
-#wordInput {
-  width: 70%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #0077b6;
-  border-radius: 10px;
+#wordInput{
+  background-color: inherit;
+  border:none;
+  font-size: 17px;
+  padding: 7px 10px;
+  margin:5px;
+  height:10px;
+  outline:none;
+}
+#outersearch{
+  margin:0 auto;
+  width:wrap;
+  text-align:left;
+  height:wrap;
+  border-radius:10px;
+  border:1px solid #014D4E;
+}
+#outersearch:hover{
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
 }
 
 #findMeaningButton {
-  padding: 10px 20px;
   font-size: 1rem;
-  background-color: #0077b6;
+  background: none;
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  float:left;
 }
 
 #findMeaningButton:hover {
-  background-color: #005691;
+  background-color: #014D4E;
+}
+#SpeakButton {
+  font-size: 1rem;
+  background: none;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  float:right;
 }
 
+#SpeakButton:hover {
+  background-color: #66cdaa;
+}
+
+
+/*#searchbutton{
+
+  float:right;
+  display:inline-block;
+}*/
 .result-container {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
 }
-
-#pronounceButton
-{
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #0077b6;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-#pronounceButton : hover
-{background-color: #005691;}
 footer {
   text-align: center;
-  background-color: #0077b6;
+  background-color: #66cdaa;
   color: #fff;
   padding: 10px;
   font-size: 0.9rem;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
 }
-/* Add this CSS to style the dropdown menu */
-.language-dropdown {
-  position: relative;
-  display: inline-block;
-  margin-top: 10px;
+#image{
+  margin-top=0.1px;
+}
+.greentext{
+  color:#014D4E;
 }
 
-#languageSelect {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  cursor: pointer;
+#gap{
+  width:14%;
 }
-
-#languageSelect option {
-  padding: 10px;
-  font-size: 1rem;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#languageSelect:hover {
-  background-color: #f0f0f0;
-}
-
-#languageSelect:focus {
-  outline: none;
-  border-color: #0077b6;
-}
-
-#languageSelect::after {
-  content: '\f107'; /* FontAwesome arrow-down icon */
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
 </style>
+</head>
+<body>
+   <div class = "fullcontent">
+  <header>
+    <h1><span class="greentext">Q</span>uick<span class="greentext">S</span>ense</h1>
+    <p class="greentext">Your Pocket Dictionary</p>
+  </header>
+  <main>
+    <div class="search-container">
+      <div id="outersearch">
+
+      <button id="findMeaningButton"><img id="image" src="searchicon.svg"?/></button>
+      <input type="text" id="wordInput" class="greentext" placeholder="Enter a word">
+      <button id="SpeakButton"><img src="speak.svg"/></button>
+      </div>
+    </div>
+    <div id="meaning" class="result-container" class="greentext"></div>
+  </main>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
