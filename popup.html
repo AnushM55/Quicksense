@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuickSense</title>
+  <script src="popup.js"></script>
+  <script src="jquery-3.7.1.min.js"></script>
+<style>
+
+.default-theme{
+  background-color:black;
+  color:white;
+  padding: 4px;
+}
+html{
+  border: 1px solid pink;
+  border-radius: 5px;
+}
+button{
+  margin-top :10%;
+}
+input{
+  margin-top :10%;
+}
+/*@media (prefers-color-scheme: dark) {
+
+.default-theme.adaptive{
+  background-color:black;
+  color:white;
+  padding: 4px;
+}
+}*/
+@media (prefers-color-scheme: light) {
+
+.default-theme.adaptive{
+  background-color:white;
+  color: black;
+  padding: 4px;
+}
+}
+
+</style>
+
+</head>
+<body class = "default-theme adaptive">
+  <div class="default-theme adaptive">
+  <input class = "default-theme adaptive" type="text" id="wordInput" placeholder="Enter a Word">
+  <button class="default-theme adaptive" id="findMeaningButton">Find Meaning</button>
+  <div id="meaning"></div>
+  </div>
+</body>
+</html>
