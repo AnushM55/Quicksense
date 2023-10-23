@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>QuickSense - Pocket Dictionary</title>
-  <!-- Add a link to your custom CSS file for styling -->
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="popup.js"></script>
   <script src="jquery-3.7.1.min.js"></script>
 </head>
@@ -15,10 +14,27 @@
   <main>
     <div class="search-container">
       <input type="text" id="wordInput" placeholder="Enter a word">
-	  <br><br><br>
+      <br><br><br>
       <button id="findMeaningButton">Find Meaning</button>
     </div>
     <div id="meaning" class="result-container"></div>
+
+	<!-- Add the Pronounce button with a Font Awesome speaker icon -->
+	<br>
+	<div class="pronounce-container">
+		<button id="pronounceButton">
+			<i class="fas fa-volume-up"></i> Pronounce
+		</button>
+		<div id="languageDropdown" class="language-dropdown" style="display: none;">
+			<select id="languageSelect">
+				<option value="en-US">English (US)</option>
+				<option value="ta-IN">Tamil</option>
+				<option value="fr-FR">French</option>
+				<option value="hi-IN">Hindi</option>
+				<option value="en-UK">English (UK)</option>
+			</select>
+		</div>
+	</div>
   </main>
   <footer>
     <p>&copy; 2023 QuickSense. All rights reserved.</p>
@@ -95,6 +111,18 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+#pronounceButton
+{
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#pronounceButton : hover
+{background-color: #005691;}
 footer {
   text-align: center;
   background-color: #0077b6;
@@ -103,6 +131,55 @@ footer {
   font-size: 0.9rem;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+/* Add this CSS to style the dropdown menu */
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#languageSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#languageSelect option {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#languageSelect:hover {
+  background-color: #f0f0f0;
+}
+
+#languageSelect:focus {
+  outline: none;
+  border-color: #0077b6;
+}
+
+#languageSelect::after {
+  content: '\f107'; /* FontAwesome arrow-down icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 </style>
