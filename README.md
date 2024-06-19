@@ -46,7 +46,7 @@ QuickSense is a Chrome extension that serves as your pocket dictionary. It allow
 
 - Shajithrooban G G (https://github.com/rooban33) -Head of Technical team (2023-2024), FOSS-CIT.
 - Anush M - Member of Technical Team (2023-2024), FOSS-CIT.
-- Vishal D - Public Relations Manager (2023-2024), FOSS-CIT.
+- Vishal D - (https://github.com/VishalDhanasekaran) Public Relations Manager (2023-2024), FOSS-CIT.
 - Lithika Rajkumar - Event Manager (2023-2024), FOSS-CIT.
 
 
